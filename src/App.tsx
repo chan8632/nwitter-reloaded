@@ -46,11 +46,12 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
   //1. isLoading 이라는 true 값이 있다. 
   const init = async () => {
-    setTimeout(() => setIsLoading(false), 2000);
-  }; //3. init 함수는 2초 뒤 setIsLoading(false)이라는 함수, 즉, isLoading의 상태를 false로 바꾸는 함수를 실행시킨다.
+    // wait for firebase
+    setLoading(false);
+  }; //3. 
   useEffect(() => {
     init();
   }, []);//2. useEffect의 []에 초기 딱 한번만 init()이라는 함수가 실행된다.
